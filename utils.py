@@ -48,7 +48,7 @@ def retry_on_timeout(seconds):
     return decorator
 
 
-@retry_on_timeout(5)  # second to wait before resending request
+@retry_on_timeout(5)  # seconds to wait before resending request
 def get_json_from_api(url) -> Response:
     response = requests.get(url)
 
