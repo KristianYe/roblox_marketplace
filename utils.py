@@ -7,7 +7,7 @@ from requests import JSONDecodeError, Response
 
 from asset_types_map import asset_type_map
 
-CATEGORIES = ("", 0, 1, 2, 3, 4, 5, 11, 12, 13)
+CATEGORIES = ("", "All", 1, 2, 3, 4, 5, 11, 12, 13) # change numbers to words
 
 
 @dataclass
@@ -59,7 +59,7 @@ def collect_items() -> List[Item]:
     items = []
 
     for category in CATEGORIES:
-        url = f"https://catalog.roblox.com/v2/search/items/details?Category={category}&SortAggregation=5&Limit=120"
+        url = f"https://catalog.roblox.com/v2/search/items/details?Category={category}&SortAggregation=5&Limit=120"  # change version to v1
         cursor = True
         while cursor:
             response = get_json_from_api(url)
